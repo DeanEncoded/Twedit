@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?backgroundColor"
+    tools:context=".ComposeTweetActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?backgroundColor"
+        android:theme="@style/Toolbar"
+        app:navigationIcon="@drawable/ic_close">
+
+        <Button
+            android:id="@+id/btn_update_tweet"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="35dp"
+            android:layout_gravity="right"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/btn_round_blue"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:text="Update Tweet"
+            android:textAllCaps="false"
+            android:textColor="@color/colorWhite"
+            android:textSize="15sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="17sp"
+            android:textColor="@color/twitterBlueDarker"
+            android:text="Edit Tweet" />
+
+    </androidx.appcompat.widget.Toolbar>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/toolbar"
+        android:padding="15dp">
+
+        <com.facebook.drawee.view.SimpleDraweeView
+            android:id="@+id/drawee_user_photo"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_gravity="left"
+            android:layout_marginEnd="20dp"
+            android:layout_marginRight="20dp"
+            app:placeholderImage="@drawable/default_photo"
+            app:roundAsCircle="true" />
+
+        <EditText
+            android:id="@+id/et_tweet_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/drawee_user_photo"
+            android:background="@android:color/transparent"
+            android:hint="What's happening"
+            android:textColor="?inverseColor"
+            android:textColorHint="?inverseColorLite"
+            android:singleLine="false"
+            android:textSize="16sp" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:background="?layout_top_bottom_borders_only"
+        android:layout_alignParentBottom="true">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:layout_centerInParent="true"
+            android:layout_height="40dp"
+            android:text="You can only edit within 1 minute of tweeting"
+            android:textAllCaps="false"
+            style="?android:attr/borderlessButtonStyle"
+            android:textSize="13sp"
+            android:textColor="@color/twitterBlue"/>
+
+    </RelativeLayout>
+
+</RelativeLayout>

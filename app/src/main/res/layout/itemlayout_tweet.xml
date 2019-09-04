@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:padding="20dp"
+    android:background="?layout_bottom_line_only"
+    android:layout_height="wrap_content">
+
+    <com.facebook.drawee.view.SimpleDraweeView
+        android:id="@+id/profile_photo"
+        android:layout_width="53dp"
+        android:layout_height="53dp"
+        android:layout_marginEnd="20dp"
+        app:placeholderImage="@drawable/egg"
+        app:roundAsCircle="true" />
+
+    <TextView
+        android:id="@+id/tv_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="NAME"
+        android:layout_toEndOf="@id/profile_photo"
+        android:textStyle="bold"
+        android:textColor="?inverseColor"
+        android:textSize="15sp"/>
+
+    <TextView
+        android:id="@+id/tv_username"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="\@name"
+        android:layout_toEndOf="@id/tv_name"
+        android:layout_marginStart="10dp"
+        android:textStyle="normal"
+        android:textColor="?inverseColorLite"
+        android:textSize="15sp"/>
+
+    <TextView
+        android:id="@+id/tv_tweet_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="THIS IS A TWEET"
+        android:layout_toEndOf="@id/profile_photo"
+        android:layout_below="@id/tv_name"
+        android:textStyle="normal"
+        android:layout_marginTop="5dp"
+        android:textColor="?inverseColor"
+        android:textSize="15sp"/>
+
+    <TextView
+        android:id="@+id/tv_tweet_edited"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="EDITED"
+        android:layout_toEndOf="@id/profile_photo"
+        android:layout_below="@id/tv_tweet_text"
+        android:textStyle="normal"
+        android:layout_marginTop="2dp"
+        android:visibility="gone"
+        android:textColor="@color/twitterBlueDarker"
+        android:textSize="13sp"/>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_below="@id/tv_tweet_text"
+        android:layout_marginTop="25dp"
+        android:layout_toEndOf="@id/profile_photo"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:id="@+id/tweet_action_reply"
+            android:tint="?inverseColorLite"
+            android:src="@drawable/ic_twitter_comment" />
+
+        <ImageView
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:layout_toEndOf="@id/tweet_action_reply"
+            android:layout_marginStart="45dp"
+            android:id="@+id/tweet_action_retweet"
+            android:tint="?inverseColorLite"
+            android:src="@drawable/ic_twitter_retweet" />
+
+        <ImageView
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:layout_toEndOf="@id/tweet_action_retweet"
+            android:layout_marginStart="45dp"
+            android:id="@+id/tweet_action_like"
+            android:tint="?inverseColorLite"
+            android:src="@drawable/ic_twitter_like_outline" />
+
+        <ImageView
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:layout_toEndOf="@id/tweet_action_like"
+            android:layout_marginStart="45dp"
+            android:id="@+id/tweet_action_edit"
+            android:visibility="gone"
+            android:tint="?inverseColorLite"
+            android:src="@drawable/ic_edit_tweet" />
+
+    </RelativeLayout>
+
+</RelativeLayout>

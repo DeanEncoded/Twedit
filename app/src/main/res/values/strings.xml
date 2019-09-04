@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">Twitter</string>
+    <string name="str_intro_text">See what\'s happening in the world right now</string>
+    <string name="str_create_account">Create account</string>
+    <string name="str_have_account">Have an account already?</string>
+    <string name="str_log_in">Log in</string>
+    <string name="str_create_your_account">Create your account</string>
+    <string name="str_name">Name</string>
+    <string name="str_username">Username</string>
+    <string name="str_password">Password</string>
+    <string name="str_create">Create</string>
+    <string name="str_home">Home</string>
+
+    <string name="open">Open</string>
+    <string name="close">Close</string>
+    <string name="str_log_in_to_twitter">Log in to Twitter.</string>
+</resources>

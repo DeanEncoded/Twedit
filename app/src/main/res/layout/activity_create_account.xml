@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="?backgroundColor"
+    android:layout_height="match_parent"
+    tools:context=".CreateAccountActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:layout_width="match_parent"
+        android:background="?backgroundColor"
+        android:id="@+id/toolbar"
+        android:theme="@style/Toolbar"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:src="@drawable/ic_twitter"
+            android:layout_gravity="center"
+            android:tint="@color/twitterBlue"/>
+
+    </androidx.appcompat.widget.Toolbar>
+    
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:paddingLeft="40dp"
+        android:paddingRight="40dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/toolbar">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/tv_create_account"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            android:layout_centerHorizontal="true"
+            android:textColor="@color/colorBlack"
+            android:text="@string/str_create_your_account" />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:paddingLeft="40dp"
+        android:paddingRight="40dp"
+        android:orientation="vertical"
+        android:layout_centerInParent="true"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:id="@+id/et_name"
+            android:hint="@string/str_name"
+            android:textColor="@color/colorBlack" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/et_username"
+            android:textSize="20sp"
+            android:layout_marginTop="15dp"
+            android:hint="@string/str_username"
+            android:textColor="@color/colorBlack" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:id="@+id/et_password"
+            android:textSize="20sp"
+            android:inputType="textPassword"
+            android:hint="@string/str_password"
+            android:textColor="@color/colorBlack" />
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:background="@drawable/layout_top_line_only"
+        android:layout_alignParentBottom="true">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:layout_height="40dp"
+            android:text="@string/str_create"
+            android:id="@+id/btn_create"
+            android:background="@drawable/btn_round_blue"
+            android:textAllCaps="false"
+            style="?android:attr/borderlessButtonStyle"
+            android:textSize="15sp"
+            android:layout_alignParentRight="true"
+            android:textColor="@color/colorWhite"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:id="@+id/overlay"
+        android:focusable="true"
+        android:clickable="true"
+        android:visibility="gone"
+        android:background="#BAFFFFFF"
+        android:layout_height="match_parent">
+
+        <ProgressBar
+            android:layout_width="60dp"
+            android:layout_centerInParent="true"
+            android:layout_height="60dp"/>
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

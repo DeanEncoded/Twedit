@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?backgroundColor"
+    tools:context=".HomeActivity">
+
+    <androidx.drawerlayout.widget.DrawerLayout
+        android:id="@+id/drawerLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:elevation="8dp"
+                android:minHeight="?attr/actionBarSize"
+                android:background="?backgroundColor"
+                app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+
+
+                <com.facebook.drawee.view.SimpleDraweeView
+                    android:id="@+id/drawee_user_photo"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="left"
+                    android:layout_marginEnd="20dp"
+                    app:placeholderImage="@drawable/default_photo"
+                    app:roundAsCircle="true" />
+
+                <TextView
+                    android:id="@+id/custom_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:text="@string/str_home"
+                    android:textColor="?attr/inverseColor"
+                    android:textSize="20sp" />
+
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/ic_homesparkles"
+                    android:tint="@color/twitterBlue"
+                    android:layout_marginEnd="20dp"
+                    android:layout_gravity="right"/>
+
+
+            </androidx.appcompat.widget.Toolbar>
+
+
+            <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/tweets_refresh_layout"
+                android:layout_above="@id/bottom_navigation"
+                android:layout_below="@id/toolbar">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerview_tweets"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+
+
+            </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+            <com.google.android.material.bottomnavigation.BottomNavigationView
+                android:id="@+id/bottom_navigation"
+                android:elevation="7dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:background="?backgroundColor"
+                app:menu="@menu/bottom_nav_menu"
+                app:itemIconTint="@drawable/bottom_nav_icon_color_selector"
+                app:labelVisibilityMode="unlabeled"
+                app:itemTextColor="@drawable/bottom_nav_icon_color_selector" />
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/fab_compose"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_above="@id/bottom_navigation"
+                android:layout_alignParentRight="true"
+                android:layout_margin="20dp"
+                android:src="@drawable/ic_twitter_compose"
+                android:tint="@color/colorWhite" />
+
+
+        </RelativeLayout>
+
+        <com.google.android.material.navigation.NavigationView
+            android:id="@+id/navigation_view"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            android:background="?backgroundColor">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <RelativeLayout
+                        android:id="@+id/container_user_info"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@android:color/transparent"
+                        android:padding="10dp">
+
+                        <com.facebook.drawee.view.SimpleDraweeView
+                            android:id="@+id/drawee_user_photo_nav"
+                            android:layout_width="70dp"
+                            android:layout_height="70dp"
+                            android:layout_margin="10dp"
+                            android:layout_marginEnd="20dp"
+                            app:placeholderImage="@drawable/default_photo"
+                            app:roundAsCircle="true" />
+
+                        <TextView
+                            android:id="@+id/tv_name"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/drawee_user_photo_nav"
+                            android:layout_marginStart="10dp"
+                            android:text="{user.name}"
+                            android:textColor="?inverseColor"
+                            android:textSize="15sp" />
+
+                        <TextView
+                            android:id="@+id/tv_username"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/tv_name"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="5dp"
+                            android:text="{@username}"
+                            android:textColor="?inverseColor"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:id="@+id/tv_followers"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/tv_username"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="15dp"
+                            android:text="Not yet showing followers"
+                            android:textColor="?inverseColor"
+                            android:textSize="15sp" />
+
+
+                    </RelativeLayout>
+
+                    <ScrollView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_above="@id/nav_themeswitch"
+                        android:layout_below="@id/container_user_info"
+                        android:background="?layout_top_bottom_borders_only">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+                            <Button
+                                style="?android:attr/borderlessButtonStyle"
+                                android:layout_width="match_parent"
+                                android:layout_height="55dp"
+                                android:layout_gravity="start"
+                                android:drawableStart="@drawable/ic_twitter_like_outline"
+                                android:drawablePadding="15dp"
+                                android:drawableTint="?inverseColorLite"
+                                android:gravity="start|center_vertical"
+                                android:paddingStart="23dp"
+                                android:text="Profile"
+                                android:textAlignment="textStart"
+                                android:textAllCaps="false"
+                                android:textColor="?attr/inverseColor"
+                                android:textSize="14sp" />
+
+                            <Button
+                                style="?android:attr/borderlessButtonStyle"
+                                android:layout_width="match_parent"
+                                android:layout_height="55dp"
+                                android:layout_gravity="start"
+                                android:drawableStart="@drawable/ic_lists"
+                                android:drawablePadding="15dp"
+                                android:drawableTint="?inverseColorLite"
+                                android:gravity="start|center_vertical"
+                                android:paddingStart="23dp"
+                                android:text="Lists"
+                                android:textAlignment="textStart"
+                                android:textAllCaps="false"
+                                android:textColor="?attr/inverseColor"
+                                android:textSize="14sp" />
+
+
+                            <Button
+                                style="?android:attr/borderlessButtonStyle"
+                                android:layout_width="match_parent"
+                                android:layout_height="55dp"
+                                android:layout_gravity="start"
+                                android:drawableStart="@drawable/ic_bookmark"
+                                android:drawablePadding="15dp"
+                                android:drawableTint="?inverseColorLite"
+                                android:gravity="start|center_vertical"
+                                android:paddingStart="23dp"
+                                android:text="Bookmarks"
+                                android:textAlignment="textStart"
+                                android:textAllCaps="false"
+                                android:textColor="?attr/inverseColor"
+                                android:textSize="14sp" />
+
+                            <Button
+                                style="?android:attr/borderlessButtonStyle"
+                                android:layout_width="match_parent"
+                                android:layout_height="55dp"
+                                android:layout_gravity="start"
+                                android:drawableStart="@drawable/ic_moments"
+                                android:drawablePadding="15dp"
+                                android:drawableTint="?inverseColorLite"
+                                android:gravity="start|center_vertical"
+                                android:paddingLeft="23dp"
+                                android:text="Moments"
+                                android:textAlignment="textStart"
+                                android:textAllCaps="false"
+                                android:textColor="?attr/inverseColor"
+                                android:textSize="14sp" />
+
+                            <Button
+                                style="?android:attr/borderlessButtonStyle"
+                                android:id="@+id/nav_logout"
+                                android:layout_width="match_parent"
+                                android:layout_height="55dp"
+                                android:layout_gravity="start"
+                                android:gravity="start|center_vertical"
+                                android:paddingLeft="23dp"
+                                android:text="Log out"
+                                android:textAlignment="textStart"
+                                android:textAllCaps="false"
+                                android:textColor="#C41010"
+                                android:textSize="14sp" />
+                        </LinearLayout>
+
+
+                    </ScrollView>
+
+                    <Button
+                        style="?android:attr/borderlessButtonStyle"
+                        android:drawableStart="@drawable/ic_theme"
+                        android:drawablePadding="15dp"
+                        android:drawableTint="?inverseColorLite"
+                        android:id="@+id/nav_themeswitch"
+                        android:layout_width="match_parent"
+                        android:layout_height="55dp"
+                        android:layout_gravity="start"
+                        android:layout_alignParentBottom="true"
+                        android:gravity="start|center_vertical"
+                        android:paddingLeft="23dp"
+                        android:text="Change theme"
+                        android:textAlignment="textStart"
+                        android:textAllCaps="false"
+                        android:textColor="?inverseColor"
+                        android:textSize="14sp" />
+
+                </RelativeLayout>
+
+
+
+
+
+
+
+            </RelativeLayout>
+
+
+        </com.google.android.material.navigation.NavigationView>
+
+
+    </androidx.drawerlayout.widget.DrawerLayout>
+
+
+</RelativeLayout>

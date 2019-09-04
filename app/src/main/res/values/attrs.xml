@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+    <attr name="backgroundColor" format="reference|color" />
+
+    <attr name="inverseColor" format="reference|color" />
+    <attr name="inverseColorLite" format="reference|color" />
+
+    <attr name="layout_bottom_line_only" format="reference|color" />
+    <attr name="layout_top_bottom_borders_only" format="reference|color" />
+
+</resources>

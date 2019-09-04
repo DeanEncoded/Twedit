@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@color/colorWhite"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LoginActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:layout_width="match_parent"
+        android:background="?backgroundColor"
+        android:id="@+id/toolbar"
+        android:theme="@style/Toolbar"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:src="@drawable/ic_twitter"
+            android:layout_gravity="center"
+            android:tint="@color/twitterBlue"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:layout_marginEnd="30dp"
+            android:id="@+id/tv_sign_up"
+            android:textColor="@color/twitterBlue"
+            android:textStyle="bold"
+            android:text="Sign up"/>
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:paddingStart="10dp"
+        android:paddingEnd="20dp"
+        android:orientation="vertical"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/toolbar">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/tv_create_account"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            android:textColor="@color/colorBlack"
+            android:text="@string/str_log_in_to_twitter" />
+
+        <TextView
+            android:layout_marginTop="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Your username"
+            android:textSize="14sp"/>
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/et_username"
+            android:textSize="20sp"
+            android:layout_marginTop="5dp"
+            android:textColor="@color/colorBlack" />
+
+        <TextView
+            android:layout_marginTop="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Password"
+            android:textSize="14sp"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:id="@+id/et_password"
+            android:textSize="20sp"
+            android:inputType="textPassword"
+            android:textColor="@color/colorBlack" />
+
+        <TextView
+            android:layout_marginTop="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:text="No password recovery. Sorry"
+            android:padding="10dp"
+            android:textSize="14sp"/>
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:background="@drawable/layout_top_line_only"
+        android:layout_alignParentBottom="true">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:layout_height="40dp"
+            android:text="@string/str_log_in"
+            android:id="@+id/btn_login"
+            android:background="@drawable/btn_round_blue"
+            android:textAllCaps="false"
+            style="?android:attr/borderlessButtonStyle"
+            android:textSize="15sp"
+            android:layout_alignParentRight="true"
+            android:textColor="@color/colorWhite"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:id="@+id/overlay"
+        android:focusable="true"
+        android:clickable="true"
+        android:visibility="gone"
+        android:background="#BAFFFFFF"
+        android:layout_height="match_parent">
+
+        <ProgressBar
+            android:layout_width="60dp"
+            android:layout_centerInParent="true"
+            android:layout_height="60dp"/>
+
+    </RelativeLayout>
+
+
+</RelativeLayout>
