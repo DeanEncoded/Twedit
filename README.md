@@ -1,5 +1,5 @@
  # Twedit
-![Twedit Banner](https://raw.githubusercontent.com/deanencoded/twedit/master/twedit_banner.png)
+![Twedit Banner](https://raw.githubusercontent.com/DeanEncoded/Twedit/master/twedit_banner.png)
 
 ### Twedit is a clone of the Twitter android app - but with editable tweets.
 Twedit was built using Android Studio and written in Kotlin.
